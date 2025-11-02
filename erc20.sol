@@ -160,7 +160,7 @@ contract WeightedVoting is ERC20 {
         // Close the issue if quorum is reached and determine if it passed
         if (_issue.totalVotes >= _issue.quorum) {
             _issue.closed = true;
-            if (_issue.votesFor > _issue.votesAgainst) {
+            if (_issue.votesFor >= _issue.votesAgainst) {
                 _issue.passed = true;
             }
         }
